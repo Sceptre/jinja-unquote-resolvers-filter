@@ -27,7 +27,6 @@ types-PyYAML = "6.0.12.9"
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.2"
 mypy = "^1.2.0"
-flake8 = "^6.0.0"
 pytest = "^7.3.0"
 Jinja2 = "^3.1.2"
 pre-commit = "^3.2.1"
