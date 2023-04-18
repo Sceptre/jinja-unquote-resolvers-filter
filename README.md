@@ -2,7 +2,7 @@
 
 ## Overview
 
-A custom filter for Sceptre for unquoting resolvers appearing in var files.
+A custom Jinja filter for Sceptre for unquoting resolvers appearing in var files.
 
 ## Installation
 
@@ -20,9 +20,6 @@ pip install git+https://github.com/Sceptre/jinja-unquote-resolvers-filter.git
 
 ## Usage/Examples
 
-Refer to the [Sceptre resolver docs](https://docs.sceptre-project.org/latest/docs/filters.html#filters) <!-- This page does not exist yet. -->
-for more information.
-
 In your var file:
 
 ```yaml
@@ -38,12 +35,12 @@ In your config:
 ```yaml
 j2_environment:
   extensions:
-    - jinja_unquote_resolvers_filer.UnquoteResolversFilterExtension
+    - jinja_unquote_resolvers_filter.UnquoteResolversFilterExtension
 
 sceptre_user_data:
   subnets:
     {{ var.Subnets | unquote_resolvers(output_indent=4) | trim }}
-  vpc: {{ var.VPC }}  # This filter not needed if the quoted resolvers are passed in scalars.
+  vpc: {{ var.VPC }}  # This filter is not needed if the quoted resolvers are passed in as scalars.
 ```
 
 ## License

@@ -50,3 +50,8 @@ repos:
     rev: v0.1.25638
     hooks:
       - id: circle-ci-validator
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: ''
+    hooks:
+      - id: mypy
+        args: [--ignore-missing-imports]
