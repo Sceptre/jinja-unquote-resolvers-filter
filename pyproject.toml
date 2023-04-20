@@ -21,18 +21,18 @@ classifiers = [
 [tool.poetry.plugins."sceptre.resolvers"]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.12"
 types-PyYAML = "6.0.12.9"
+python = ">=3.8,<3.12"
 Jinja2 = "^3.1.2"
 
 [tool.poetry.group.dev.dependencies]
-autopep8 = "^2.0.2"
 mypy = "^1.2.0"
 pytest = "^7.3.0"
 pre-commit = "^3.2.1"
 tox = "^4.0.0"
 pytest-cov = "^4.0.0"
 sceptre = ">3.2"
+types-pyyaml = "^6.0.12.9"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
