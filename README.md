@@ -42,7 +42,3 @@ sceptre_user_data:
     {{ var.Subnets | unquote_resolvers(output_indent=4) | trim }}
   vpc: {{ var.VPC }}  # This filter is not needed if the quoted resolvers are passed in as scalars.
 ```
-
-## License
-
-Apache 2.0

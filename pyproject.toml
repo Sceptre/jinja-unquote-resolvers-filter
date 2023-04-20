@@ -5,8 +5,8 @@ readme = "README.md"
 homepage = "https://github.com/Sceptre/jinja-unquote-resolvers-filter"
 repository = "https://github.com/Sceptre/jinja-unquote-resolvers-filter"
 authors = ["Sceptre <sceptreorg@gmail.com>"]
-description = "A Github template for Sceptre resolvers"
-keywords = ["sceptre"]
+description = "A Jinja filter for allowing Sceptre resolvers in var files"
+keywords = ["sceptre", "jinja"]
 license = "Apache-2.0"
 classifiers = [
   "Intended Audience :: Developers",
@@ -23,12 +23,12 @@ classifiers = [
 [tool.poetry.dependencies]
 python = ">=3.8,<3.12"
 types-PyYAML = "6.0.12.9"
+Jinja2 = "^3.1.2"
 
 [tool.poetry.group.dev.dependencies]
 autopep8 = "^2.0.2"
 mypy = "^1.2.0"
 pytest = "^7.3.0"
-Jinja2 = "^3.1.2"
 pre-commit = "^3.2.1"
 tox = "^4.0.0"
 pytest-cov = "^4.0.0"
