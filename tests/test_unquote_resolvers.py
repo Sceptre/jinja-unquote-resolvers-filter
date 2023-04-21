@@ -1,4 +1,4 @@
-from unquote_resolvers import unquote_resolvers
+from jinja_unquote_resolvers_filter.unquote_resolvers import unquote_resolvers
 
 
 def test_single_resolver():
