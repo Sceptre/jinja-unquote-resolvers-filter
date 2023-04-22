@@ -56,7 +56,7 @@ j2_environment:
 
 sceptre_user_data:
   subnets:
-    {{ var.Subnets | unquote_resolvers(output_indent=4) | trim }}
+    {{ var.Subnets | unquote_resolvers(output_indent=4) }}
   vpc: {{ var.VPC }}  # This filter is not needed if the quoted resolvers are passed in as scalars.
 ```
 
