@@ -3,6 +3,8 @@ from typing import Any, Dict, List, Union
 import yaml
 from yaml.nodes import ScalarNode
 
+from textwrap import indent as textwrap_indent
+
 try:
     from yaml import CSafeDumper as SafeDumper
 except ImportError:
@@ -70,10 +72,4 @@ def unquote_resolvers(
     except Exception as e:
         raise Exception("unquote_resolvers - %s" % str(e))
 
-    if output_indent > 0:
-        indented_lines = [
-            " " * output_indent + line for line in transformed.splitlines()
-        ]
-        transformed = "\n".join(indented_lines)
-
-    return transformed
+    return textwrap_indent(transformed, " " * output_indent)
