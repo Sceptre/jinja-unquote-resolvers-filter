@@ -2,7 +2,24 @@
 
 ## Overview
 
-A custom Jinja filter for Sceptre for unquoting resolvers appearing in var files.
+A custom Jinja filter for Sceptre for unquoting resolvers appearing in
+var files.
+
+## Motivation
+
+In Sceptre, resolvers are an essential feature for simplifying complex
+configurations by enabling dynamic data retrieval. Resolvers such as
+`!stack_output_external` and `!stack_output` are particularly useful
+for referencing output values from other stacks or external sources,
+among many others.
+
+When using resolvers in var files, however, they must be protected from
+being interpreted as YAML tags by the YAML loader.
+
+This plugin addresses this challenge by allowing you to safely include
+resolvers in your var files. It ensures that resolvers are not processed
+as YAML tags by the loader, and then turned back into YAML tags after
+Jinja interpolation in the generated config.
 
 ## Installation
 
