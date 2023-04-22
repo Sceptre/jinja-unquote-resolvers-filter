@@ -1,5 +1,5 @@
-import re
 from jinja_unquote_resolvers_filter.unquote_resolvers import unquote_resolvers
+
 
 def assert_output_matches(expected_output, actual_output):
     """
