@@ -59,3 +59,8 @@ sceptre_user_data:
     {{ var.Subnets | unquote_resolvers(output_indent=4) | trim }}
   vpc: {{ var.VPC }}  # This filter is not needed if the quoted resolvers are passed in as scalars.
 ```
+
+## Arguments
+
+- `indent` (optional, default=2): The number of spaces to use for indentation of nested structures in the output YAML.
+- `output_indent` (optional, default=0): The number of spaces to use for indentation of the entire output YAML.
