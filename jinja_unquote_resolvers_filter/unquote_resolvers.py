@@ -33,6 +33,7 @@ def unquote_resolvers(
     data: Union[Dict, List],
     indent: int = 2,
     output_indent: int = 0,
+    trim: bool = False,
     *args: Any,
     **kw: Any
 ) -> str:
@@ -87,4 +88,10 @@ def unquote_resolvers(
     except Exception as e:
         raise Exception("unquote_resolvers - %s" % str(e))
 
-    return textwrap_indent(transformed, " " * output_indent)
+    if output_indent > 0:
+        transformed = textwrap_indent(transformed, " " * output_indent)
+
+    if trim:
+        transformed = transformed.strip()
+
+    return transformed
