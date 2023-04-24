@@ -7,5 +7,5 @@ class UnquoteResolversFilterExtension(Extension):
         super().__init__(environment)
         environment.filters["unquote_resolvers"] = self.unquote_resolvers_filter
 
-    def unquote_resolvers_filter(self, data, indent=2, output_indent=2):
-        return unquote_resolvers(data, indent=indent)
+    def unquote_resolvers_filter(self, data, indent=2, output_indent=0):
+        return unquote_resolvers(data, indent=indent, output_indent=output_indent)
