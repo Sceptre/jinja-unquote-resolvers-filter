@@ -80,3 +80,10 @@ def test_mixed_data():
     )
     actual_output = unquote_resolvers(input_data)
     assert_output_matches(expected_output, actual_output)
+
+
+def test_multiline_resolver():
+    input_data = {"my_multiline_resolver": "!from_json [!request http://www.whatever.com]"}
+    expected_output = "my_multiline_resolver: !from_json [!request http://www.whatever.com]\n"
+    actual_output = unquote_resolvers(input_data)
+    assert_output_matches(expected_output, actual_output)

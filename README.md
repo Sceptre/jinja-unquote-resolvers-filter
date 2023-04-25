@@ -65,3 +65,19 @@ sceptre_user_data:
 - `indent` (optional, default=2): The number of spaces to use for indentation of nested structures in the output YAML.
 - `output_indent` (optional, default=0): The number of spaces to use for indentation of the entire output YAML.
 - `trim` (optional, default=False): Whether to trim leading and trailing spaces in the output YAML.
+
+## Limitations
+
+At this time, resolver expressions must be wrapped in a single line of text. That is, instead of:
+
+```yaml
+my_multiline_resolver: |
+  !from_json
+    - !request http://www.whatever.com
+```
+
+Instead write:
+
+```yaml
+my_multiline_resolver: '!from_json [!request http://www.whatever.com]'
+```
