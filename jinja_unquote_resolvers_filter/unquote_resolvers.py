@@ -61,6 +61,8 @@ def unquote_resolvers(
     @process_item.register(str)
     def _(item: str) -> Any:
         if item.startswith("!"):
+            if "\n" in item:
+                raise NotImplementedError("Multiline expressions not supported")
             tag_name, tag_body = item.split(" ", 1)
             return Tag(tag_name, tag_body)
         return item

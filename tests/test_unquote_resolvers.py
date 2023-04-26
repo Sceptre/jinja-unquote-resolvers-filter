@@ -1,3 +1,4 @@
+from pytest import raises
 from jinja_unquote_resolvers_filter.unquote_resolvers import unquote_resolvers
 
 
@@ -82,8 +83,20 @@ def test_mixed_data():
     assert_output_matches(expected_output, actual_output)
 
 
-def test_multiline_resolver():
-    input_data = {"my_multiline_resolver": "!from_json [!request http://www.whatever.com]"}
-    expected_output = "my_multiline_resolver: !from_json [!request http://www.whatever.com]\n"
+def test_multiline_in_one_line_resolver():
+    input_data = {
+        "my_multiline_resolver": "!from_json [!request http://www.whatever.com]"
+    }
+    expected_output = (
+        "my_multiline_resolver: !from_json [!request http://www.whatever.com]\n"
+    )
     actual_output = unquote_resolvers(input_data)
     assert_output_matches(expected_output, actual_output)
+
+
+def test_multiline_raises():
+    input_data = {
+        "my_multiline_resolver": "!from_json\n  - !request http://www.whatever.com\n"
+    }
+    with raises(NotImplementedError, match="Multiline expressions not supported"):
+        unquote_resolvers(input_data)
