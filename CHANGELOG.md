@@ -6,12 +6,8 @@ Categories: Added, Removed, Changed, Fixed, Nonfunctional, Deprecated
 
 <!--- All unreleased items go here  -->
 
-<!--- Example CHANGELOG entry
-
-## 0.1.0 (2019.07.02)
+## 1.0.0 (2023.04.28)
 
 ### Added
 
-- Initial resolver code
-
--->
+- Initial filter code
