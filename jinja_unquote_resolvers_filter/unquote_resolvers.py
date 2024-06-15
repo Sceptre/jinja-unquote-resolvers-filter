@@ -75,6 +75,12 @@ def unquote_resolvers(
     def _(item: List) -> List:
         return [process_item(value) for value in item]
 
+    if not isinstance(data, (dict, list)):
+        raise TypeError(
+            "unquote_resolvers - Input data must be a dict or a list, but got %s"
+            % type(data).__name__
+        )
+
     processed_data = process_item(data)
 
     try:
